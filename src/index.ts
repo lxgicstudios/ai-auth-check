@@ -2,7 +2,18 @@ import OpenAI from "openai";
 import * as fs from "fs";
 import * as path from "path";
 
-const openai = new OpenAI();
+function getOpenAI(): OpenAI {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    console.error(
+      "Missing OPENAI_API_KEY environment variable.\n" +
+      "Get one at https://platform.openai.com/api-keys then:\n" +
+      "  export OPENAI_API_KEY=sk-..."
+    );
+    process.exit(1);
+  }
+  return new OpenAI({ apiKey });
+}
 
 function readDirRecursive(dir: string, maxFiles = 20): string {
   let content = "";
@@ -27,6 +38,7 @@ function readDirRecursive(dir: string, maxFiles = 20): string {
 }
 
 export async function auditAuth(dir: string): Promise<string> {
+  const openai = getOpenAI();
   const code = readDirRecursive(dir);
   if (!code.trim()) {
     return "No source files found in " + dir;
