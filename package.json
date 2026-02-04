@@ -1,33 +1,63 @@
 {
-  "name": "ai-auth-check",
-  "version": "1.0.1",
-  "description": "Audit your auth implementation for security flaws",
+  "name": "@lxgicstudios/ai-auth-check",
+  "version": "1.0.2",
+  "description": "AI-powered auth security auditor - find vulnerabilities in your authentication code using GPT",
   "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
     "ai-auth-check": "dist/cli.js"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc"
   },
   "keywords": [
     "ai",
-    "openai",
-    "gpt",
-    "authentication",
-    "auth",
-    "security",
+    "anthropic",
     "audit",
-    "oauth",
-    "jwt",
-    "session",
+    "auth",
+    "authentication",
+    "authorization",
+    "claude",
+    "cli",
     "devsecops",
     "developer-tools",
-    "cli",
-    "automation",
+    "gpt",
+    "jwt",
+    "llm",
+    "nodejs",
+    "npx",
+    "oauth",
+    "openai",
+    "security",
+    "session",
     "typescript",
-    "nodejs"
+    "vulnerability",
+    "zero-config"
   ],
+  "author": "LXGIC Studios <hello@lxgicstudios.com> (https://lxgicstudios.com)",
   "license": "MIT",
+  "homepage": "https://github.com/lxgicstudios/ai-auth-check#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxgicstudios/ai-auth-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lxgicstudios/ai-auth-check/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/lxgicstudios"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "commander": "^12.1.0",
     "openai": "^4.73.0",
@@ -36,10 +66,5 @@
   "devDependencies": {
     "typescript": "^5.6.0",
     "@types/node": "^22.0.0"
-  },
-  "author": "LXGIC Studios",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/LXGIC-Studios/ai-auth-check"
   }
 }
